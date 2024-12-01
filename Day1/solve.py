@@ -1,6 +1,7 @@
 
 from collections import Counter
 
+
 def part1():
     """
     Challenge requires sorting lists of numbers and then summing the distances between
@@ -47,10 +48,11 @@ def part1():
 
     return total_distance
 
+
 def part2():
     """
     Need to determine similarity scores
-    :return:
+    :return: Similarity Score
     """
     # Set total to 0
     total_similarity = 0
