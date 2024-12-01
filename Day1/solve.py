@@ -74,29 +74,14 @@ def part2():
             left_list.append(num1)
             right_list.append(num2)
 
-            left_dict[num1] = 0
+        # Utilize the Counter object to get a count of items in the right list
+        counter = Counter(right_list)
 
-        temp_diff = 0
+        # Iterate through the left list and add to the total similarity
         for num in left_list:
-            if num in right_list:
-                temp_diff += 1
-
-        print(f"Temp diff = {temp_diff}")
-
-        # Now that the lists are complete at the dict is ready, loop through the right list
-        # and add 1 to every entry in the left_dict for that number
-        for num in right_list:
-            if num in left_dict:
-                left_dict[num] += 1
-
-        # Now that the dict is set up, do one more loop, this time through the left list
-        # to add to the similarity score for each item in the left list that has a dict value that is non zero
-        for i in range(0, len(left_list)):
-            if left_list[i] in left_dict:
-                total_similarity += left_dict[left_list[i]]
-                if left_dict[left_list[i]] != 0:
-                    print(f"Found number {left_list[i]}, with value {left_dict[left_list[i]]}. New total: {total_similarity}")
-                    print(f"Number {left_list[i]} is in the left_list {left_list.count(left_list[i])} times")
+            if num in counter:
+                # Similarity is number * occurrences
+                total_similarity += counter[num] * num
 
     return total_similarity
 
