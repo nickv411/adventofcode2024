@@ -47,7 +47,6 @@ def part1():
             if curr_char != ")":
                 continue
 
-
             total += (int(num1) * int(num2))
 
     print(f"Part 1 total is {total}")
@@ -164,6 +163,11 @@ def is_num_str(in_char):
     else:
         return False
 
+
+def check_for_word():
+    # TODO: make something that can check character by character using a loop provided by an input string
+    # needs to be able to return the last character checked to set curr_char to that if it is not the desired string
+    pass
 
 
 def main():
